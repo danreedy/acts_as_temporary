@@ -63,4 +63,4 @@ Returns __true__ if the current object as a _@temporary\_id_.
     registration.is_temporary? # => true
 
 
-This uses MIT-LICENSE.
+This project uses MIT-LICENSE.
