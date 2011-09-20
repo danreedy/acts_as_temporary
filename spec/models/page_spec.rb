@@ -170,4 +170,38 @@ describe Page do
     end
   end
   
+  describe :clear_stale_objects do
+    before(:each) { @page.store }
+    
+    context "temporary object was just created" do
+      it "should not delete any temporary objects" do
+        lambda {
+          Page.clear_stale_objects
+        }.should_not change(TemporaryObject, :count)
+      end
+    end
+    context "temporary object was created years in the past" do
+      it "should delete the temporary object" do
+        the_future = Time.now + 2.years
+        Time.stub(:now).and_return(the_future)
+        lambda {
+          Page.clear_stale_objects
+        }.should change(TemporaryObject, :count).by(-1)
+      end
+    end
+    context "several kinds of temporary objects exist" do
+      before(:each) {
+        TemporaryObject.create(permanent_class: "NotAPage", definition: { id: nil, title: "None" } )
+        TemporaryObject.create(permanent_class: "NotAnotherPage", definition: { id: nil, title: "None" } )
+      }
+      it "should only clear expired objects of it's own class" do
+        the_future = Time.now + 2.years
+        Time.stub(:now).and_return(the_future)
+        lambda {
+          Page.clear_stale_objects
+        }.should change(TemporaryObject, :count).by(-1)
+      end
+    end
+  end
+  
 end

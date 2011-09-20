@@ -15,6 +15,11 @@ module ActsAsTemporary
         new_object
       end
     end
+    
+    def clear_stale_objects
+      expiry_date = Time.now - Rails.application.config.acts_as_temporary_shelf_life
+      TemporaryObject.delete_all(["permanent_class = ? AND created_at < ?", self.name, expiry_date])
+    end
   end
   module InstanceMethods
     def can_be_temporary?
