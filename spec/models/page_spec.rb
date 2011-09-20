@@ -45,10 +45,10 @@ describe Page do
     end
   end
   
-  describe :recall do
-    before { @temporary_object = TemporaryObject.create(permanent_class: "NotAPage", definition: { id: nil, title: "None" } ) }
+  describe :recall do 
     
     context "exception handling" do
+      before(:each) { @temporary_object = TemporaryObject.create(permanent_class: "NotAPage", definition: { id: nil, title: "None" } ) }
       it "should raise an ArgumentError if a temporary id is not provided" do
         lambda {
           Page.recall
@@ -62,9 +62,78 @@ describe Page do
       end
     end
     
-    
+    context "valid temporary objects" do
+      before(:each) do
+         @page.store
+       end
+       subject { Page.recall(temporary_id) }
+       let(:temporary_id) { @page.temporary_id }       
+       its(:attributes) { should eql @page.attributes }
+       it { should be_a Page}
+    end
     
   end
   
+  describe :save do
+    
+    context "Storing and saving from the same instance" do
+      subject { @page }
+      before(:each) { @page.store }
+    
+      it "should delete the temporary object when saved" do
+        lambda {
+          @page.save
+        }.should change(TemporaryObject, :count).by(-1)
+      end
+      it "should set #temporary_id to nil" do
+        lambda {
+          @page.save
+        }.should change(@page, :temporary_id).to(nil)
+      end
+    end
+    
+    context "Storing and saving from the class level" do
+      before(:each) do
+        @page.store
+        temporary_id = @page.temporary_id
+        @page = nil
+        @page = Page.recall(temporary_id)
+      end
+      
+      it "should build from the temporary object and then delete it on save" do
+        lambda {
+          @page.save
+        }.should change(TemporaryObject, :count).by(-1)
+      end
+      it "should set #temporary_id to nil" do
+        lambda {
+          @page.save
+        }.should change(@page, :temporary_id).to(nil)
+      end
+    end
+    
+  end
+  
+  describe :is_temporary? do
+    subject { @page }
+    
+    context "when stored as a temporary object" do
+      it "should return true for #is_temporary?" do
+        lambda {
+          @page.store
+        }.should change(@page, :is_temporary?).from(false).to(true)        
+      end
+    end
+    context "when recalled and saved" do
+      it "should no longer report as a temporary object" do
+        @page.store
+        @page = Page.recall(@page.temporary_id)
+        lambda {
+          @page.save
+        }.should change(@page, :is_temporary?).from(true).to(false)
+      end
+    end   
+    
+  end
   
 end

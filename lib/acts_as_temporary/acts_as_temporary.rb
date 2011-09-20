@@ -3,12 +3,16 @@ module ActsAsTemporary
     #has_many :reviews, :as=>:reviewable, :dependent=>:destroy
     include InstanceMethods
     attr_reader :temporary_id
+    after_save :drop_temporary
     
     def recall(temp_id=nil)
       raise ArgumentError, "Please provide a temporary object ID" if temp_id.blank?
       temporary_object = TemporaryObject.find(temp_id)
       if temporary_object
         raise TypeError, "Temporary object and calling object must be the same class" unless temporary_object.permanent_class.eql?(self.name)
+        new_object = self.new(temporary_object.definition)
+        new_object.instance_variable_set("@temporary_id",temp_id)
+        new_object
       end
     end
   end
@@ -32,6 +36,17 @@ module ActsAsTemporary
     def recall(temp_id=nil)
       temp_id ||= @temporary_id
       self.class.send(:recall, temp_id)
+    end
+    
+    def drop_temporary
+      if @temporary_id.present?
+        TemporaryObject.destroy(@temporary_id)
+        @temporary_id = nil
+      end
+    end
+    
+    def is_temporary?
+      @temporary_id.present?
     end
   end
 end
