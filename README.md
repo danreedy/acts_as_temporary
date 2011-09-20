@@ -1,8 +1,7 @@
 # ActsAsTemporary
 
-On occasion I've had the need to store data for a short period of time within an application's database but did not want it to artificially inflate the ID numbers
-Initially I used a separate model called _Temporary Object_ but it is much more slick to include everything within ActiveRecord and making these calls on the model
-itself.
+On occasion I've had the need to store data for a short period of time within an application's database but did not want it to artificially inflate the ID numbers.
+This gem uses a _TemporaryObject_ model that stores the "definition" (read: attributes) of a model. It can then be recalled at a later date. Upon saving a recalled object the temporary version is deleted. 
 
 ## Requirements
 
