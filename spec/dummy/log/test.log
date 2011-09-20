@@ -9,3 +9,113 @@ Migrating to CreatePages (20110919190615)
   [1m[35m (0.4ms)[0m  select sqlite_version(*)
   [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
   [1m[35m (0.0ms)[0m  PRAGMA index_list("pages")
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (37.7ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 19:28:09 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times.\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:28:09 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (19.2ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 19:29:44 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times.\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:29:44 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.6ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 19:30:25 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times.\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:30:25 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.7ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 19:30:44 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times.\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:30:44 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temporary_objects" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 19:30:44 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times.\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:30:44 UTC +00:00]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "temporary_objects" 
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 19:30:44 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times.\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:30:44 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (17.9ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 19:33:18 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:33:18 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.7ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 19:36:04 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:36:04 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTemporaryObject Load (0.2ms)[0m  SELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.5ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 19:36:47 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:36:47 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTemporaryObject Load (0.2ms)[0m  SELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (18.8ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 19:38:05 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:38:05 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 19:38:05 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:38:05 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTemporaryObject Load (0.2ms)[0m  [1mSELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 19:38:05 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 19:38:05 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (30.6ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTemporaryObject Load (0.2ms)[0m  [1mSELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:36:12 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (50.6ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTemporaryObject Load (0.2ms)[0m  [1mSELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.3ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:36:51 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.4ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 20:37:18 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:37:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.6ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 20:42:18 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:42:18 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mTemporaryObject Load (0.2ms)[0m  SELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.3ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 20:44:31 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:44:31 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (17.6ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 20:45:27 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:45:27 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (17.8ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "temporary_objects" [0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTemporaryObject Load (0.2ms)[0m  [1mSELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00], ["definition", "---\nid: !!null \ntitle: Example Page\nbody: It was the best of times\ncreated_at: !!null \nupdated_at: !!null \n"], ["permanent_class", "Page"], ["updated_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)  [["created_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "temporary_objects" ("created_at", "definition", "permanent_class", "updated_at") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00], ["definition", "---\n:id: !!null \n:title: None\n"], ["permanent_class", "NotAPage"], ["updated_at", Tue, 20 Sep 2011 20:48:25 UTC +00:00]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mTemporaryObject Load (0.1ms)[0m  [1mSELECT "temporary_objects".* FROM "temporary_objects" WHERE "temporary_objects"."id" = ? LIMIT 1[0m  [["id", 1]]

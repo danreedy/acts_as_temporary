@@ -10,9 +10,15 @@ This project builds upon ActiveRecord. In theory this should work with nothing o
 
 ## Installation
 
-This project is distributed as a gem and it should be as simple as adding the following line to your **Gemfile**
+This project is distributed as a gem and it should be as simple as adding the following line to your **Gemfile**.
 
     gem 'acts_as_temporary', '~> 0.0.1'
+
+You'll need to copy and run the migration from the engine.
+
+    $ cd _/your/rails/app_
+    $ rake acts_as_temporary_engine:install:migrations
+    $ rake db:migrate
 
 ## Configuration
 
