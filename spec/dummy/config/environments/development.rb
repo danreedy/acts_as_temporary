@@ -27,4 +27,6 @@ Dummy::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  #config.acts_as_temporary_shelf_life = 1.days
 end

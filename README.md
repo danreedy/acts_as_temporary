@@ -14,6 +14,14 @@ This project is distributed as a gem and it should be as simple as adding the fo
 
     gem 'acts_as_temporary', '~> 0.0.1'
 
+## Configuration
+
+In your _{environment}.rb_ file you can set the shelf life of a temporary object with the following configuration definition:
+
+    config.acts_as_temporary_shelf_life = 1.day # Set the duration to something that makes sense
+
+By default the shelf life of a temporary object is _365.days_.
+
 # Usage
 
 ## Class Methods

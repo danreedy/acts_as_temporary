@@ -7,6 +7,10 @@ module ActsAsTemporary
     def can_be_temporary?
       true
     end
+    
+    def shelf_life
+      Rails.application.config.acts_as_temporary_shelf_life
+    end
   end
 end
 
