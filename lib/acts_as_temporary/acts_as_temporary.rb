@@ -38,6 +38,10 @@ module ActsAsTemporary
       self.class.send(:recall, temp_id)
     end
     
+    def is_temporary?
+      @temporary_id.present?
+    end
+    
     def drop_temporary
       if @temporary_id.present?
         TemporaryObject.destroy(@temporary_id)
@@ -45,9 +49,7 @@ module ActsAsTemporary
       end
     end
     
-    def is_temporary?
-      @temporary_id.present?
-    end
+    
   end
 end
 

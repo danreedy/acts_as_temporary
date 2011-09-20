@@ -85,11 +85,25 @@ describe Page do
           @page.save
         }.should change(TemporaryObject, :count).by(-1)
       end
+      it "should not delete the temporary object when failed to save" do
+        @page.stub(:save).and_return(false)
+        lambda {
+          @page.save
+        }.should_not change(TemporaryObject, :count)
+      end
+      
       it "should set #temporary_id to nil" do
         lambda {
           @page.save
         }.should change(@page, :temporary_id).to(nil)
       end
+      it "should not set #temporary_id to nil when failed to save" do
+        @page.stub(:save).and_return(false)
+        lambda {
+          @page.save
+        }.should_not change(@page, :temporary_id)
+      end
+      
     end
     
     context "Storing and saving from the class level" do
@@ -134,6 +148,26 @@ describe Page do
       end
     end   
     
+  end
+  
+  describe :drop_temporary do
+    before(:each) { @page.store }
+    
+    it "should destroy the temporary object" do
+      lambda {
+        @page.drop_temporary
+      }.should change(TemporaryObject, :count).by(-1)
+    end
+    it "should not save the object" do
+      lambda {
+        @page.drop_temporary
+      }.should_not change(Page, :count)
+    end
+    it "should set #temporary_id to nil" do
+      lambda {
+        @page.drop_temporary
+      }.should change(@page, :is_temporary?).from(true).to(false)
+    end
   end
   
 end

@@ -59,7 +59,19 @@ The _#recall_ instance method takes the ID of a temporary object and attempts to
 
 ### #is_temporary?
 
-Returns __true__ if the current object as a _@temporary\_id_.
+Returns __true__ if the current object has a _@temporary\_id_.
+
+## Deleting Temporary Objects
+
+There are two methods for deleting temporary objects. The first, and most common, is to simply call _save_ and the second is to call _drop\_temporary_ on an object that has been recalled.
+
+### #save
+
+If the object saves without error the temporary object will be destroyed.
+
+### #drop\_temporary
+
+Deletes the associated temporary object from the database without saving the calling object
 
 ### Example
 
@@ -74,6 +86,9 @@ Returns __true__ if the current object as a _@temporary\_id_.
     registration = Registration.recall(14123)
     registration.id # => nil
     registration.is_temporary? # => true
+    
+    registration.save # => true
+    registration.is_temporary? # => false
 
 
 This project uses MIT-LICENSE.
