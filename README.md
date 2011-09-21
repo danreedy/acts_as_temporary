@@ -5,7 +5,7 @@ This gem uses a _TemporaryObject_ model that stores the "definition" (read: attr
 
 ## Requirements
 
-This project builds upon ActiveRecord. In theory this should work with nothing outside of a Rails application
+This project builds upon ActiveRecord and for that reason you must use it within a Rails application. Currently this gem has only been tested against a rails 3.1 application.
 
 ## Installation
 
