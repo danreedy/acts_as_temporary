@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Page do
+describe "A Temporary Object" do
   before { @page = Page.new(title: "Example Page", body: "It was the best of times") }
 
   context "includes ActsAsTemporary class methods" do
