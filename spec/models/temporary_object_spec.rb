@@ -27,6 +27,13 @@ describe "A Temporary Object" do
         subject.store
       }.should change(TemporaryObject, :count).by(1)
     end
+    it "should use the same temporary object on subsequent stores" do
+      subject.store
+      lambda {        
+        subject.title = "A Ruby Story"
+        subject.store
+      }.should_not change(TemporaryObject, :count)
+    end
   end
   
   describe :temporary_id do

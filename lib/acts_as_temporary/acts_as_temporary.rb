@@ -31,7 +31,7 @@ module ActsAsTemporary
     end
     
     def store
-      temporary_object = TemporaryObject.new
+      temporary_object = @temporary_id.present? ? TemporaryObject.find(@temporary_id) : TemporaryObject.new
       temporary_object.permanent_class = self.class.name
       temporary_object.definition = self.attributes
       temporary_object.save
