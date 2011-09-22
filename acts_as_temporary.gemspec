@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 3.1.0"
+  s.add_dependency "rails", ">= 3.0.0"
   s.add_development_dependency "sqlite3"
   s.add_development_dependency "steak", "~> 2.0.0"
 end
