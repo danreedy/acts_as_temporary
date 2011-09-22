@@ -1,22 +1,25 @@
 # ActsAsTemporary
 
+**RAILS 3.0.X BRANCH**: This is for use in a rails 3.0.x application and should not be used with Rails 3.1.x apps.
+
+
 On occasion I've had the need to store data for a short period of time within an application's database but did not want it to artificially inflate the ID numbers.
 This gem uses a _TemporaryObject_ model that stores the "definition" (read: attributes) of a model. It can then be recalled at a later date. Upon saving a recalled object the temporary version is deleted. 
 
 ## Requirements
 
-This project builds upon ActiveRecord and for that reason you must use it within a Rails application. Currently this gem has only been tested against a rails 3.1 application.
+This project builds upon ActiveRecord and for that reason you must use it within a Rails application.
 
 ## Installation
 
 This project is distributed as a gem and it should be as simple as adding the following line to your **Gemfile**.
 
-    gem 'acts_as_temporary', '~> 0.0.1'
+    gem 'acts_as_temporary', '~> 0.0.1', :git => 'https://github.com/danreedy/acts_as_temporary/tree/rails-3.0.x'
 
-You'll need to copy and run the migration from the engine.
+You'll need to use the included generator to copy the the engine migrations.
 
     $ cd _/your/rails/app_
-    $ rake acts_as_temporary_engine:install:migrations
+    $ rails g acts_as_temporary:install
     $ rake db:migrate
 
 ## Configuration
