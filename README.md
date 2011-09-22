@@ -14,7 +14,7 @@ This project builds upon ActiveRecord and for that reason you must use it within
 
 This project is distributed as a gem and it should be as simple as adding the following line to your **Gemfile**.
 
-    gem 'acts_as_temporary', '~> 0.0.1', :git => 'https://github.com/danreedy/acts_as_temporary/tree/rails-3.0.x'
+    gem 'acts_as_temporary', '~> 0.0.1', :git => "git://github.com/danreedy/acts_as_temporary.git", :branch => "rails-3.0.x"
 
 You'll need to use the included generator to copy the the engine migrations.
 
